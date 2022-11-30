@@ -4,12 +4,9 @@ import { useState, useEffect, useRef} from 'react';
 import { MapDirections } from './MapDirections'; 
 
 function App() {
-
-
-//AIzaSyAcCoCgENhpjHTn9A6j2fuQoRgfr2lVRHQ
   return (
     <div>
-      <Wrapper apiKey={""}>
+      <Wrapper apiKey={process.env.GOOGLE_MAP_API_KEY}>
         <MapDirections />
       </Wrapper>
       <p>Map</p>
