@@ -1,6 +1,6 @@
 import { useEffect, useRef} from 'react';
 
-export const MapDirections = () => {
+export const MapDirections = ({ travelMode }) => {
   const mapRef = useRef(null);
 
   useEffect(() => {
@@ -13,6 +13,8 @@ export const MapDirections = () => {
       {
         zoom: 7,
         center: { lat: 41.85, lng: -87.65 },
+        mapTypeControl: false,
+        fullscreenControl: false,
       }
     );
   
@@ -26,7 +28,7 @@ export const MapDirections = () => {
       destination: {
         lat: 50.45945864721699, lng: 30.51797107159085
       },
-      travelMode: window.google.maps.TravelMode.DRIVING,
+      travelMode,
     })
     .then((response) => {
       console.log(response)
@@ -48,6 +50,6 @@ export const MapDirections = () => {
   })
 
   return (
-    <div ref={mapRef} id='map' style={{width: 800, height: 600}}></div>
+    <div ref={mapRef} id='map' className="h-[calc(100vh-57.2px)] w-screen"></div>
   );
 }
