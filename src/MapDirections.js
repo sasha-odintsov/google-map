@@ -48,8 +48,6 @@ export const MapDirections = () => {
   })
 
   return (
-    <div ref={mapRef} id='map' style={{width: 800, height: 600}}>
-
-    </div>
+    <div ref={mapRef} id='map' style={{width: 800, height: 600}}></div>
   );
 }
